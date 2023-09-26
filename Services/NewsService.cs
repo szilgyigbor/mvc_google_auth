@@ -1,9 +1,9 @@
 ﻿using MVCGoogleAuth.Models;
-
+using MVCGoogleAuth.Services.Interfaces;
 
 namespace MVCGoogleAuth.Services
 {
-    public class NewsService
+    public class NewsService: INewsSevice
     {
         public static List<News> AllNews = new List<News>();
 
