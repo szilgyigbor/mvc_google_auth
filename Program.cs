@@ -4,6 +4,11 @@ namespace MVCGoogleAuth
     {
         public static void Main(string[] args)
         {
+            DotNetEnv.Env.Load();
+
+            var clientId = System.Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID");
+            var clientSecret = System.Environment.GetEnvironmentVariable("GOOGLE_CLIENT_SECRET");
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
