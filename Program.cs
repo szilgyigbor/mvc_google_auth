@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
+using MVCGoogleAuth.Services;
+using MVCGoogleAuth.Services.Interfaces;
 
 namespace MVCGoogleAuth
 {
@@ -17,6 +19,9 @@ namespace MVCGoogleAuth
             var googleOptions = builder.Configuration.GetSection("Authentication:Google").Get<GoogleOptions>();
 
             // Add services to the container.
+
+            builder.Services.AddTransient<INewsSevice, NewsService>();
+
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddAuthentication(options =>
