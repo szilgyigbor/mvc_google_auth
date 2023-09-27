@@ -44,15 +44,15 @@ namespace MVCGoogleAuth.Services
             return news;
         }
 
-        public News UpdateNews(News news)
+        public News UpdateNews(int id, NewsDTO newsDto)
         {
-            News ThisNews = AllNews.SingleOrDefault(n => n.Id == news.Id)!;
-            ThisNews.Title = news.Title;
-            ThisNews.Content = news.Content;
-            ThisNews.ImageUrl = news.ImageUrl;
+            News ThisNews = AllNews.SingleOrDefault(n => n.Id == id)!;
+            ThisNews.Title = newsDto.Title;
+            ThisNews.Content = newsDto.Content;
+            ThisNews.ImageUrl = newsDto.ImageUrl;
             ThisNews.DateModified = DateTime.Now;
             
-            return news;
+            return ThisNews;
         }
 
         public bool DeleteNews(int id)
