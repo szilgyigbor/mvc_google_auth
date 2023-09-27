@@ -56,7 +56,12 @@ namespace MVCGoogleAuth.Controllers
         [HttpDelete]
         public IActionResult DeleteNews(int id)
         {
-            return Ok(_newsService.DeleteNews(id));
+            bool isDeleted = _newsService.DeleteNews(id);
+            if (isDeleted)
+            {
+                return Ok(isDeleted);
+            }
+            return NotFound("News with the given ID was not found.");
         }
     }
 }
