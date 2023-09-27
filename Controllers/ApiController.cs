@@ -48,14 +48,14 @@ namespace MVCGoogleAuth.Controllers
         [HttpPut]
         public IActionResult UpdateNews([FromBody] News news)
         {
-            return Ok(_newsService.UpdateNewsAsync(news));
+            return Ok(_newsService.UpdateNews(news));
         }
 
         [Route("api/deletenews/{id}")]
         [HttpDelete]
         public IActionResult DeleteNews(int id)
         {
-            return Ok(_newsService.DeleteNewsAsync(id));
+            return Ok(_newsService.DeleteNews(id));
         }
     }
 }
