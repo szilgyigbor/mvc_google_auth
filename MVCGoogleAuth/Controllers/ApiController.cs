@@ -16,8 +16,16 @@ namespace MVCGoogleAuth.Controllers
             _newsService = newsService;
         }
 
+        /// <summary>
+        /// Gets a list of all news items.
+        /// </summary>
+        /// <returns>
+        /// A list of news items.
+        /// </returns>
+        /// <response code="200">Returns the list of news items.</response>
         [Route("api/getnews")]
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetNews()
         {
             return Ok(_newsService.GetNews());
