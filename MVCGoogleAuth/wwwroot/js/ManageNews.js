@@ -102,14 +102,12 @@ function deleteNews(id) {
 function updateNews(id) {
     isUpdating = true;
     updatingId = id;
-    console.log(id);
     
     fetch(`https://localhost:${port}/api/getnews/${id}`, {
         method: 'GET',
     })
         .then(response => response.json())
         .then(data => {
-            console.log('News to update:', data);
             const title = document.getElementById('title');
             const content = document.getElementById('content');
             const imageUrl = document.getElementById('imageurl');
