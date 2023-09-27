@@ -46,6 +46,15 @@ namespace MVCGoogleAuth.Controllers
             return Ok(_newsService.GetNewsById(id));
         }
 
+        /// <summary>
+        /// Create a news item with the required contents.
+        /// </summary>
+        /// <param name="newsDto">The model of the news data transfer object.</param>
+        /// <returns>
+        /// The created news item.
+        /// </returns>
+        /// <response code="200">Returns the news item.</response>
+        /// <response code="400">Returns an error if the news data is null.</response>
         [Route("api/createnews")]
         [HttpPost]
         public IActionResult CreateNews([FromBody] NewsDTO newsDto)
