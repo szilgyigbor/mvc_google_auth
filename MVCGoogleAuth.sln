@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCGoogleAuth", "MVCGoogleAuth\MVCGoogleAuth.csproj", "{8DA357B3-4C42-4AFA-B700-9BB885447798}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCGoogleAuth.Tests", "MVCGoogleAuth.Tests\MVCGoogleAuth.Tests.csproj", "{5DB98DCD-63D7-4DA9-AC7F-9CC2A7129410}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8DA357B3-4C42-4AFA-B700-9BB885447798}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DA357B3-4C42-4AFA-B700-9BB885447798}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DA357B3-4C42-4AFA-B700-9BB885447798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB98DCD-63D7-4DA9-AC7F-9CC2A7129410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB98DCD-63D7-4DA9-AC7F-9CC2A7129410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB98DCD-63D7-4DA9-AC7F-9CC2A7129410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB98DCD-63D7-4DA9-AC7F-9CC2A7129410}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
