@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.OpenApi.Models;
 using MVCGoogleAuth.Services;
 using MVCGoogleAuth.Services.Interfaces;
 
@@ -36,6 +37,13 @@ namespace MVCGoogleAuth
                 options.ClientSecret = clientSecret!;
             });
 
+            builder.Services.AddSwaggerGen(c =>
+            {
+                var filePath = Path.Combine(AppContext.BaseDirectory, "MVCGoogleAuth.xml");
+                c.IncludeXmlComments(filePath);
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "News Portal API", Version = "v1" });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -57,6 +65,11 @@ namespace MVCGoogleAuth
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "News Portal API V1");
+            });
 
             app.Run();
         }
