@@ -17,7 +17,7 @@ namespace MVCGoogleAuth.Services
             return AllNews.SingleOrDefault(n => n.Id == id)!;
         }
 
-        public News CreateNewsAsync(News news)
+        public News CreateNews(string userName, NewsDTO newsDto)
         {
             int newId = AllNews.Count + 1;
 
@@ -33,7 +33,7 @@ namespace MVCGoogleAuth.Services
             return news;
         }
 
-        public News UpdateNewsAsync(News news)
+        public News UpdateNews(News news)
         {
             News ThisNews = AllNews.SingleOrDefault(n => n.Id == news.Id)!;
             ThisNews.Title = news.Title;
@@ -44,7 +44,7 @@ namespace MVCGoogleAuth.Services
             return news;
         }
 
-        public bool DeleteNewsAsync(int id)
+        public bool DeleteNews(int id)
         {
             News ThisNews = AllNews.SingleOrDefault(n => n.Id == id);
             if (ThisNews == null)
