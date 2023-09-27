@@ -5,6 +5,7 @@ using MVCGoogleAuth.Services.Interfaces;
 
 namespace MVCGoogleAuth.Controllers
 {
+    [Authorize]
     [ApiController]
     public class ApiController : ControllerBase
     {
