@@ -31,6 +31,14 @@ namespace MVCGoogleAuth.Controllers
             return Ok(_newsService.GetNews());
         }
 
+        /// <summary>
+        /// Gets a news item selected by id.
+        /// </summary>
+        /// <param name="id">The id of the news item.</param>
+        /// <returns>
+        /// A news item.
+        /// </returns>
+        /// <response code="200">Returns the news item.</response>
         [Route("api/getnews/{id}")]
         [HttpGet]
         public IActionResult GetNewsById(int id)
