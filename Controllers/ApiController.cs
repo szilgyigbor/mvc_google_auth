@@ -31,9 +31,17 @@ namespace MVCGoogleAuth.Controllers
 
         [Route("api/createnews")]
         [HttpPost]
-        public IActionResult CreateNews([FromBody] News news)
+        public IActionResult CreateNews([FromBody] NewsDTO newsDto)
         {
-            return Ok(_newsService.CreateNewsAsync(news));
+            if (newsDto == null)
+            {
+                return BadRequest("News data is null");
+            }
+
+            string? userName = HttpContext.User.Identity.Name;
+                        
+
+            return Ok(_newsService.CreateNews(userName, newsDto));
         }
 
         [Route("api/updatenews")]
