@@ -86,6 +86,15 @@ namespace MVCGoogleAuth.Controllers
             return Ok(_newsService.UpdateNews(id, newsDto));
         }
 
+        /// <summary>
+        /// Delete a selected news item.
+        /// </summary>
+        /// <param name="id">The id of the selected news item.</param>
+        /// <returns>
+        /// A boolean value indicating whether the deletion was successful or not.
+        /// </returns>
+        /// <response code="200">Returns true if the news item was successfully deleted.</response>
+        /// <response code="404">Returns a message if the news with the given ID was not found.</response>
         [Route("api/deletenews/{id}")]
         [HttpDelete]
         public IActionResult DeleteNews(int id)
