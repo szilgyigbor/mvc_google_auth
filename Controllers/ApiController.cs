@@ -44,11 +44,11 @@ namespace MVCGoogleAuth.Controllers
             return Ok(_newsService.CreateNews(userName, newsDto));
         }
 
-        [Route("api/updatenews")]
+        [Route("api/updatenews/{id}")]
         [HttpPut]
-        public IActionResult UpdateNews([FromBody] News news)
+        public IActionResult UpdateNews(int id, [FromBody] NewsDTO newsDto)
         {
-            return Ok(_newsService.UpdateNews(news));
+            return Ok(_newsService.UpdateNews(id, newsDto));
         }
 
         [Route("api/deletenews/{id}")]
