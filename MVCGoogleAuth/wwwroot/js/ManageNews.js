@@ -1,6 +1,7 @@
 let isUpdating = false;
 let updatingId = null;
 const submitButton = document.getElementById('subbutton');
+const port = "7108";
 
 document.getElementById('newsForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -18,7 +19,7 @@ document.getElementById('newsForm').addEventListener('submit', function (event) 
     event.preventDefault();
 
     if (isUpdating) {
-        fetch(`https://localhost:44335/api/updatenews/${updatingId}`, {
+        fetch(`https://localhost:${port}/api/updatenews/${updatingId}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ title: title.value, content: content.value, imageUrl: imageUrl.value })
@@ -39,7 +40,7 @@ document.getElementById('newsForm').addEventListener('submit', function (event) 
         submitButton.innerHTML = "Add news";
 
     } else {
-        fetch("https://localhost:44335/api/createnews", {
+        fetch(`https://localhost:${port}/api/createnews`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -58,7 +59,7 @@ document.getElementById('newsForm').addEventListener('submit', function (event) 
 
 
 function fetchNews() {
-    fetch("https://localhost:44335/api/getnews")
+    fetch(`https://localhost:${port}/api/getnews`)
         .then(response => response.json())
         .then(data => {
             const newsList = document.getElementById('newsList');
@@ -85,7 +86,7 @@ function fetchNews() {
 }
 
 function deleteNews(id) {
-    fetch(`https://localhost:44335/api/deletenews/${id}`, {
+    fetch(`https://localhost:${port}/api/deletenews/${id}`, {
         method: 'DELETE',
     })
         .then(response => response.json())
@@ -103,7 +104,7 @@ function updateNews(id) {
     updatingId = id;
     console.log(id);
     
-    fetch(`https://localhost:44335/api/getnews/${id}`, {
+    fetch(`https://localhost:${port}/api/getnews/${id}`, {
         method: 'GET',
     })
         .then(response => response.json())
