@@ -10,7 +10,7 @@ namespace MVCGoogleAuth.Services.Interfaces
 
         News CreateNews(string userName, NewsDTO newsDto);
 
-        News UpdateNews(News news);
+        News UpdateNews(int id, NewsDTO newsDto);
 
         bool DeleteNews(int id);
     }
