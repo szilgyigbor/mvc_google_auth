@@ -5,12 +5,19 @@ using MVCGoogleAuth.Services.Interfaces;
 
 namespace MVCGoogleAuth.Controllers
 {
+    /// <summary>
+    /// API controller for managing news items. Provides CRUD operations.
+    /// </summary>
     [Authorize]
     [ApiController]
     public class ApiController : ControllerBase
     {
         private readonly INewsService _newsService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiController"/> class.
+        /// </summary>
+        /// <param name="newsService">The news service to be used for CRUD operations.</param>
         public ApiController(INewsService newsService)
         {
             _newsService = newsService;
