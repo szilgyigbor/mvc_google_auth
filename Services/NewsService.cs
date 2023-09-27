@@ -26,7 +26,18 @@ namespace MVCGoogleAuth.Services
                 newId++;
             }
 
+            News news = new News
+            {
+                Title = newsDto.Title!,
+                Content = newsDto.Content!,
+                ImageUrl = newsDto.ImageUrl!,
+                Author = userName!
+            };
+
             news.Id = newId;
+
+            news.DateCreated = DateTime.Now;
+            news.DateModified = DateTime.Now;
 
             AllNews.Add(news);
 
