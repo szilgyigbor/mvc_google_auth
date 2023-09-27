@@ -8,10 +8,10 @@ namespace MVCGoogleAuth.Services.Interfaces
 
         News GetNewsById(int id);
 
-        News CreateNewsAsync(News news);
+        News CreateNews(string userName, NewsDTO newsDto);
 
-        News UpdateNewsAsync(News news);
+        News UpdateNews(News news);
 
-        bool DeleteNewsAsync(int id);
+        bool DeleteNews(int id);
     }
 }
