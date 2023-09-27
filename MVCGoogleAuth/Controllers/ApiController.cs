@@ -9,9 +9,9 @@ namespace MVCGoogleAuth.Controllers
     [ApiController]
     public class ApiController : ControllerBase
     {
-        private readonly INewsSevice _newsService;
+        private readonly INewsService _newsService;
 
-        public ApiController(INewsSevice newsService)
+        public ApiController(INewsService newsService)
         {
             _newsService = newsService;
         }

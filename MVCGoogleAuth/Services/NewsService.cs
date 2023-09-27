@@ -3,7 +3,7 @@ using MVCGoogleAuth.Services.Interfaces;
 
 namespace MVCGoogleAuth.Services
 {
-    public class NewsService: INewsSevice
+    public class NewsService: INewsService
     {
         public static List<News> AllNews = new List<News>();
 

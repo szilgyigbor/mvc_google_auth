@@ -2,7 +2,7 @@
 
 namespace MVCGoogleAuth.Services.Interfaces
 {
-    public interface INewsSevice
+    public interface INewsService
     {
         List<News> GetNews();
 

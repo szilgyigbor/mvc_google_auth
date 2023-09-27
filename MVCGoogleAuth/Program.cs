@@ -20,7 +20,7 @@ namespace MVCGoogleAuth
 
             // Add services to the container.
 
-            builder.Services.AddTransient<INewsSevice, NewsService>();
+            builder.Services.AddTransient<INewsService, NewsService>();
 
             builder.Services.AddControllersWithViews();
 
