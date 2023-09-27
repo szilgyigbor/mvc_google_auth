@@ -70,6 +70,15 @@ namespace MVCGoogleAuth.Controllers
             return Ok(_newsService.CreateNews(userName, newsDto));
         }
 
+        /// <summary>
+        /// Update a selected news item with the modified contents.
+        /// </summary>
+        /// <param name="id">The id of the selected news item.</param>
+        /// <param name="newsDto">The model of the news data transfer object.</param>
+        /// <returns>
+        /// The updated news item.
+        /// </returns>
+        /// <response code="200">Returns the news item.</response>
         [Route("api/updatenews/{id}")]
         [HttpPut]
         public IActionResult UpdateNews(int id, [FromBody] NewsDTO newsDto)
