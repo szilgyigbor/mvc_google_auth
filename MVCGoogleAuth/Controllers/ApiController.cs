@@ -62,6 +62,11 @@ namespace MVCGoogleAuth.Controllers
         /// </returns>
         /// <response code="200">Returns the news item.</response>
         /// <response code="400">Returns an error if the news data is null.</response>
+        /// <remarks>
+        /// This method also attempts to obtain the username from the HttpContext. 
+        /// If the username is not found (e.g., authorization is disabled), 
+        /// it defaults to "unidentified user".
+        /// </remarks>
         [Route("api/createnews")]
         [HttpPost]
         public IActionResult CreateNews([FromBody] NewsDTO newsDto)
@@ -72,7 +77,11 @@ namespace MVCGoogleAuth.Controllers
             }
 
             string? userName = HttpContext.User.Identity.Name;
-                        
+
+            if (userName == null)
+            {
+                userName = "unidentified user";
+            }
 
             return Ok(_newsService.CreateNews(userName, newsDto));
         }
