@@ -37,6 +37,7 @@ To get the application up and running, you'll need:
   
       \`\`\`
       GOOGLE_CLIENT_ID=your-google-client-id
+      
       GOOGLE_CLIENT_SECRET=your-google-client-secret
       \`\`\`
 
