@@ -36,6 +36,7 @@ To get the application up and running, you'll need:
     - Create a `.env` file in the `MVCGoogleAuth` folder and add your API keys like so:
       
       GOOGLE_CLIENT_ID=your-google-client-id
+      
       GOOGLE_CLIENT_SECRET=your-google-client-secret
 
 3. **Open and Build the Project**
